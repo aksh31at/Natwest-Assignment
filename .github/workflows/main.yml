@@ -38,7 +38,7 @@ jobs:
           cd lambda
           zip -r ../lambda.zip .
 
-      - name: Upload Lambda Code
+      - name: Upload Lambda Code to AWS
         run: |
           aws lambda update-function-code \
             --function-name my_lambda_function \
