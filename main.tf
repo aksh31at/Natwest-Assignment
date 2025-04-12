@@ -35,7 +35,7 @@ resource "aws_iam_role_policy_attachment" "lambda_logs" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-# Lambda Function (you will upload code separately via GitHub Actions)
+# Lambda Function (upload zip separately to repo or S3)
 resource "aws_lambda_function" "my_lambda" {
   function_name = "my_lambda_function"
   role          = aws_iam_role.lambda_exec_role.arn
@@ -45,6 +45,3 @@ resource "aws_lambda_function" "my_lambda" {
   filename         = "akshat-lambda-739ab9b7-191b-4013-834e-f077930b3ba2.zip"
   source_code_hash = filebase64sha256("akshat-lambda-739ab9b7-191b-4013-834e-f077930b3ba2.zip")
 }
-
-
-akshat-lambda-739ab9b7-191b-4013-834e-f077930b3ba2.zip
