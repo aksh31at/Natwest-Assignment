@@ -3,14 +3,14 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-xxxxxxxxxxxxxxx"  # your new AMI ID in the new region
+  ami           = "ami-0c40f67d933cfc99d"  # your new AMI ID in the new region
   instance_type = "t2.micro"
 }
 
 
 # IAM Role for Lambda
 resource "aws_iam_role" "lambda_exec_role" {
-  name = "lambda_execution_role_2"  # ✅ give it a new name
+  name = "lambda_execution_role_v3"  # ✅ change the name
 
 
   assume_role_policy = jsonencode({
