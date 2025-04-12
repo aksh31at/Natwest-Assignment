@@ -9,7 +9,7 @@ resource "aws_instance" "example" {
 
 
 # IAM Role for Lambda
-resource "aws_iam_role" "lambda_exec_role" {
+data "aws_iam_role" "lambda_exec_role" {
   name = "lambda_execution_role_v3"  # ✅ change the name
 
 
@@ -36,7 +36,7 @@ resource "aws_iam_role_policy_attachment" "lambda_logs" {
 # Lambda Function (upload zip separately to repo or S3)
 resource "aws_lambda_function" "my_lambda" {
   function_name = "my_lambda_function"
-  role          = aws_iam_role.lambda_exec_role.arn
+  role          = data.aws_iam_role.lambda_exec_role.arn
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.9"
 
