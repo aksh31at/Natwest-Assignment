@@ -42,6 +42,6 @@ resource "aws_lambda_function" "my_lambda" {
   role             = aws_iam_role.lambda_exec_role.arn
   handler          = "lambda_function.lambda_handler"
   runtime          = "python3.9"
-  filename         = "lambda.zip"
+  filename         = "akshat-lambda-739ab9b7-191b-4013-834e-f077930b3ba2.zip"
   source_code_hash = filebase64sha256("lambda.zip")
 }
