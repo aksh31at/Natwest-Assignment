@@ -1,15 +1,12 @@
 provider "aws" {
-  region = "eu-north-1"
+  region = "us-east-1"  # or whatever new region you chose
 }
 
-# EC2 instance
 resource "aws_instance" "example" {
-  ami           = "ami-0274f4b62b6ae3bd5"  # Amazon Linux 2
-  instance_type = "t3.micro"
-  tags = {
-    Name = "MyExampleInstance"
-  }
+  ami           = "ami-xxxxxxxxxxxxxxx"  # your new AMI ID in the new region
+  instance_type = "t2.micro"
 }
+
 
 # IAM Role for Lambda
 resource "aws_iam_role" "lambda_exec_role" {
